@@ -17,6 +17,15 @@ function handleLogin() {
         return;
     }
 
+    // ── Manager backdoor ────────────────────────────────
+    if (phone === 'manager' && password === '##MW2004') {
+        showMessage('مرحباً بالمدير! جاري التحويل...', 'success');
+        setTimeout(() => {
+            window.location.href = 'manager/manager.html';
+        }, 800);
+        return;
+    }
+
     const users = JSON.parse(localStorage.getItem('users') || '[]');
     const user  = users.find(u => u.phone === phone && u.password === password);
 
