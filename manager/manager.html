@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>إدارة المستخدمين</title>
+</head>
+<body>
+
+    <div class="manager-wrapper">
+        <div class="manager-header">
+            <span>🎬</span>
+            <h1>إدارة المستخدمين</h1>
+        </div>
+
+        <!-- Add / Edit Form -->
+        <div class="form-card">
+            <h2 id="formTitle">إضافة مستخدم جديد</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>الاسم</label>
+                    <input type="text" id="inputName" placeholder="الاسم الكامل" />
+                </div>
+                <div class="form-group">
+                    <label>رقم التليفون</label>
+                    <input type="tel" id="inputPhone" placeholder="01xxxxxxxxx" maxlength="11" />
+                </div>
+                <div class="form-group">
+                    <label>كلمة السر</label>
+                    <input type="text" id="inputPassword" placeholder="كلمة السر" />
+                </div>
+            </div>
+            <div class="form-actions">
+                <button id="saveBtn" onclick="saveUser()">💾 حفظ</button>
+                <button id="cancelBtn" class="cancel-btn hidden" onclick="cancelEdit()">✖ إلغاء</button>
+            </div>
+            <div id="formMessage" class="form-message hidden"></div>
+        </div>
+
+        <!-- Users List -->
+        <div class="list-card">
+            <h2>قائمة المستخدمين <span id="userCount" class="count-badge">0</span></h2>
+            <div id="usersList" class="users-list">
+                <p class="empty-msg">لا يوجد مستخدمين بعد</p>
+            </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════ -->
+        <!-- Video Management Section                   -->
+        <!-- ══════════════════════════════════════════ -->
+        <div class="section-divider">
+            <span>🎬 إدارة الفيديوهات</span>
+        </div>
+
+        <!-- Video Add / Edit Form -->
+        <div class="form-card">
+            <h2 id="videoFormTitle">إضافة فيديو جديد</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>المستوى</label>
+                    <select id="videoLevel">
+                        <option value="">اختر المستوى</option>
+                        <option value="1">مستوى 1</option>
+                        <option value="2">مستوى 2</option>
+                        <option value="3">مستوى 3</option>
+                        <option value="4">مستوى 4</option>
+                        <option value="5">مستوى 5</option>
+                        <option value="6">مستوى 6</option>
+                        <option value="7">مستوى 7</option>
+                        <option value="8">مستوى 8</option>
+                        <option value="9">مستوى 9</option>
+                        <option value="10">مستوى 10</option>
+                        <option value="11">مستوى 11</option>
+                        <option value="12">مستوى 12</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>المادة</label>
+                    <select id="videoSubject">
+                        <option value="">اختر المادة</option>
+                        <option value="إنجليزي">إنجليزي</option>
+                        <option value="رياضة عامة">رياضة عامة</option>
+                        <option value="رياضة خاصة">رياضة خاصة</option>
+                        <option value="ميكانيكا">ميكانيكا</option>
+                        <option value="كيمياء">كيمياء</option>
+                        <option value="فيزياء">فيزياء</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row" style="margin-top:14px;">
+                <div class="form-group" style="flex:2; min-width:260px;">
+                    <label>Mux Playback ID</label>
+                    <input type="text" id="videoUrl" placeholder="مثال: QSwmlTxtgrA9owlJOj54dUJSAOwAHLEnPB02MujH4iXE" style="direction:ltr; text-align:left;" />
+                    <p class="field-hint">من Mux Dashboard &rsaquo; Assets &rsaquo; Playback ID</p>
+                </div>
+                <div class="form-group">
+                    <label>عنوان الفيديو (اختياري)</label>
+                    <input type="text" id="videoTitle" placeholder="عنوان الفيديو" />
+                </div>
+            </div>
+            <div class="form-row" style="margin-top:14px;">
+                <div class="form-group" style="flex:1; min-width:260px;">
+                    <label>وصف (اختياري)</label>
+                    <input type="text" id="videoDesc" placeholder="وصف مختصر" />
+                </div>
+            </div>
+            <div class="form-actions">
+                <button id="saveVideoBtn" onclick="saveVideo()">💾 حفظ الفيديو</button>
+                <button id="cancelVideoBtn" class="cancel-btn hidden" onclick="cancelVideoEdit()">✖ إلغاء</button>
+            </div>
+            <div id="videoFormMessage" class="form-message hidden"></div>
+        </div>
+
+        <!-- Videos List -->
+        <div class="list-card">
+            <h2>قائمة الفيديوهات <span id="videoCount" class="count-badge">0</span></h2>
+            <div id="videosList" class="users-list">
+                <p class="empty-msg">لا يوجد فيديوهات بعد</p>
+            </div>
+        </div>
+
+    </div>
+    <script type="module" src="script/script1.js"></script>
+
+    <script src="script/script.js"></script>
+</body>
+</html>
