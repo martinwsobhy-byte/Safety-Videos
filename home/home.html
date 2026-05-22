@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>الرئيسية</title>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-logo">
+            <span>🎬</span>
+            <span class="logo-text">Safety Videos</span>
+        </div>
+        <div class="header-user">
+            <span id="userName" class="user-name-display"></span>
+            <button id="logoutBtn" class="logout-btn">خروج</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="levels-grid" id="levelsGrid"></div>
+    </main>
+
+    <!-- Subject Modal -->
+    <div class="modal-overlay hidden" id="modalOverlay">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="modalTitle">المواد</h3>
+                <button id="modalCloseBtn" class="modal-close">✕</button>
+            </div>
+            <div class="subjects-grid" id="subjectsGrid"></div>
+        </div>
+    </div>
+
+    <script type="module" src="script/script.js"></script>
+</body>
+</html>
